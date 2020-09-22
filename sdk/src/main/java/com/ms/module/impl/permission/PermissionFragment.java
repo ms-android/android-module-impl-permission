@@ -2,6 +2,7 @@ package com.ms.module.impl.permission;
 
 import android.annotation.TargetApi;
 import android.os.Bundle;
+import android.system.Os;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -13,7 +14,6 @@ import java.util.Iterator;
 import java.util.List;
 
 public class PermissionFragment extends Fragment {
-    private static final int PERMISSIONS_REQUEST_CODE = 1;
     private PermissionListener listener;
 
     public PermissionFragment() {
@@ -28,7 +28,6 @@ public class PermissionFragment extends Fragment {
         this.setRetainInstance(true);
     }
 
-    @TargetApi(23)
     public void requestPermissions(@NonNull String[] permissions) {
         List<String> requestPermissionList = new ArrayList();
         String[] var3 = permissions;
